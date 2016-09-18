@@ -13,17 +13,29 @@ let cardData = [
 ]
 
 class Work extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      data:[],
+      wait:true
+    }
+  }
   componentDidMount(){
      getJson()
        .then( (recData) => {
-         console.log(recData.getJson);
+        //  console.log(recData.getJson);
+        this.setState({
+          data:recData.getJson,
+          wait:false
+        })
        });
    }
   render () {
+    let cards = this.state.data.map( (item,i) => <Card {...item} key={i} />)
     return(
       <div className="container-fluid">
         <div className="row" style={{marginTop:'20px'}}>
-          {cardData.map( (item,i) => <Card {...item} key={i} /> )}
+        {this.state.wait ? 'wait moment' : cards}
         </div>
       </div>
     )
