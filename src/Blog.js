@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 import marked from 'marked';
 import { Md } from './utils/help';
+import hljs from 'highlight.js';
 
 class Blog extends React.Component {
   constructor(){
@@ -24,7 +25,7 @@ class Blog extends React.Component {
   render () {
     marked.setOptions({
     highlight: function (code) {
-    return require('highlight.js').highlightAuto(code).value;
+    return hljs.highlightAuto(code).value;
   }
 });
     let content = this.state.wait ? "wait.." : marked(this.state.data)

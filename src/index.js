@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Routers from './routes';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/vs.css';
 // import './main.css';
 // import MarkDown from './MarkDown';
 
