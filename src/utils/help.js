@@ -10,8 +10,6 @@ function searchGit (add) {
       alert(error);
     });
 }
-
-export { searchGit };
 function getJson (add) {
   let address = `https://raw.githubusercontent.com/forevertyler/demodata/master/card.json?${Math.random()}`
   return axios.get(address)
@@ -22,5 +20,15 @@ function getJson (add) {
       alert(error);
     });
 }
+function Md (add) {
+  let address = `https://raw.githubusercontent.com/forevertyler/demodata/master/blog/${add}.md`
+  return axios.get(address)
+    .then( (res) => (
+      { Md:res.data }
+    ))
+    .catch(function (error) {
+      alert(error);
+    });
+}
 
-export { getJson };
+export { getJson,searchGit,Md };
