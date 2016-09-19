@@ -31,7 +31,7 @@ class Blog extends React.Component {
     let content = this.state.wait ? "wait.." : marked(this.state.data)
     return(
       <div>
-        <div dangerouslySetInnerHTML={{__html:content}} />
+        <div dangerouslySetInnerHTML={{__html:content}} className="post-content"/>
       </div>
     )
   }
